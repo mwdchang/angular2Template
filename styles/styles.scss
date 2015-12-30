@@ -1,0 +1,23 @@
+@import "base";
+
+body {
+   font-family: monospace;
+   font-weight:200;
+   margin: 1rem;
+}
+
+.repo {
+   width: 25%;
+   float: left;
+   display: inline-block;
+   background-color: $blue-light;
+   border: 1px solid $blue;
+   border-radius: 0.5rem;
+   padding: 0.5rem;
+   margin-left: 0.5rem;
+}
+
+input {
+   margin-bottom: 0.25rem;
+   padding: 0.1rem;
+}

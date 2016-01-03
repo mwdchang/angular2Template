@@ -50,7 +50,8 @@ gulp.task('copy', function() {
 gulp.task('play', ['ts2js', 'sass', 'copy', 'usemin'], function () {
     var http = require('http');
     var connect = require('connect');
-    var serveStatic = require('serve-static');
+    // var serveStatic = require('serve-static');
+    var superStatic = require('superstatic');
     var open = require('open');
 
     var port = 9000, app;
@@ -58,9 +59,18 @@ gulp.task('play', ['ts2js', 'sass', 'copy', 'usemin'], function () {
     gulp.watch(PATHS.sass, ['sass']);
     gulp.watch(PATHS.view, ['copy']);
 
+    var spec = {
+      config: {
+        public: './dist',
+        rewrites: [
+           {source: '**', destination: '/index.html'}
+        ]
+      }
+   };
 
-    // app = connect().use(serveStatic(__dirname));
-    app = connect().use(serveStatic('./dist'));
+    //app = connect().use(serveStatic('./dist'));
+    app = connect().use(superStatic(spec));
+
     http.createServer(app).listen(port, function () {
         console.log('listening on port ... ', port);
         open('http://localhost:' + port);

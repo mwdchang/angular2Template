@@ -1,6 +1,19 @@
 <h3>{{welcomeMessage}}</h3>
+<p>
+Simple template application for angular 2: Enter a github user name to see the user's repositories.
+</p>
 <section>
    <repo>Loading repo...</repo>
    <repo>Loading repo...</repo>
    <repo>Loading repo...</repo>
+</section>
+<br style="clear:both">
+<hr>
+<section>
+   <p>This embedded view is controlled by the router</p>
+   <br>
+   <a [routerLink]="['Start']">Start</a>
+   <a [routerLink]="['View2']">View 2</a>
+   <br>
+   <router-outlet></router-outlet>
 </section>

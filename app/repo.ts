@@ -28,7 +28,6 @@ export class Repo {
 
    constructor(http: Http) {
       this.http = http;
-      console.log('http', this.http);
    }
 
    update(v:string):void {

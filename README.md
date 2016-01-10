@@ -3,4 +3,5 @@ A basic setup for RESTful-like web applications with angular 2, typescript, sass
 
 ## Setup
 - npm install
+- tsd install
 - gulp play

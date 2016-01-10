@@ -1,3 +1,5 @@
+/// <reference path='../typings/tsd.d.ts' />
+
 import {Component, provide} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
@@ -28,6 +30,9 @@ import {View2Component} from "./view2";
 })
 export class MyApp {
    welcomeMessage:string = "Test angular 2 application !!!";
+
+   constructor() {
+   }
 };
 
 bootstrap(MyApp, [HTTP_PROVIDERS, ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: PathLocationStrategy})]);
